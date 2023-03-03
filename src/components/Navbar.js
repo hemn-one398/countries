@@ -6,8 +6,8 @@ import "../App.css";
 import searchImage from "../assets/search.svg";
 
 const Navbar = ({
-  handleKeyDown,
-  handleChange,
+  handleSearchInputKeyDown,
+  handleSearchInputChange,
   regionOptions,
   handleRegionChange,
   selectedRegion,
@@ -15,10 +15,12 @@ const Navbar = ({
   return (
     <div className="container">
       <header>
-        <Search handleChange={handleChange} handleKeyDown={handleKeyDown} />
-        <Select 
-
-        className="region-select"
+        <Search
+          handleSearchInputChange={handleSearchInputChange}
+          handleSearchInputKeyDown={handleSearchInputKeyDown}
+        />
+        <Select
+          className="region-select"
           onChange={handleRegionChange}
           options={regionOptions}
           value={selectedRegion}
@@ -28,10 +30,17 @@ const Navbar = ({
   );
 };
 
-export const Search = ({ handleKeyDown, handleChange }) => {
+export const Search = ({
+  handleSearchInputKeyDown,
+  handleSearchInputChange,
+}) => {
   return (
     <div className="search-field">
-      <input type="text" onChange={handleChange} onKeyDown={handleKeyDown} />
+      <input
+        type="text"
+        onChange={handleSearchInputChange}
+        onKeyDown={handleSearchInputKeyDown}
+      />
       <div>
         <img src={searchImage} alt="" />
       </div>

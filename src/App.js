@@ -60,17 +60,15 @@ function App() {
     fetchCountries(searchedConutry);
   }, [selectedRegion, searchedConutry]);
 
-  function handleChange(event) {
+  function handleSearchInputChange(event) {
     if (event.target.value.length === 0) {
       setSearchedCountry(ALL_COUNTRIES);
     }
   }
   function handleRegionChange(selectedRegionParam) {
     setSelectedRegion(selectedRegionParam);
-
-    fetchCountries(searchedConutry);
   }
-  function handleKeyDown(event) {
+  function handleSearchInputKeyDown(event) {
     if (event.key === "Enter") {
       setSearchedCountry(event.target.value);
     }
@@ -78,8 +76,8 @@ function App() {
   return (
     <>
       <Navbar
-        handleChange={handleChange}
-        handleKeyDown={handleKeyDown}
+        handleSearchInputChange={handleSearchInputChange}
+        handleSearchInputKeyDown={handleSearchInputKeyDown}
         regionOptions={regionOptions}
         handleRegionChange={handleRegionChange}
         selectedRegion={selectedRegion}
