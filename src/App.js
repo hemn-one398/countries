@@ -23,7 +23,7 @@ function App() {
     setIsLoading(true);
     try {
       fetch(
-        name === "allCountries"
+        name === ALL_COUNTRIES
           ? "https://restcountries.com/v3.1/all"
           : "https://restcountries.com/v3.1/name/" + name
       )
