@@ -91,6 +91,8 @@ function App() {
               ))
             ) : errorMsg !== "" ? (
               <div>{errorMsg}</div>
+            ) : countries.length === 0 ? (
+              <div>No Data Found</div>
             ) : (
               countries.map((country) => {
                 return <Card key={country.name.common} country={country} />;
