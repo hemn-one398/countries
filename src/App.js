@@ -93,7 +93,7 @@ function App() {
               <div>{errorMsg}</div>
             ) : (
               countries.map((country) => {
-                return <Card key={country.ccn3} country={country} />;
+                return <Card key={country.name.common} country={country} />;
               })
             )}
           </>
